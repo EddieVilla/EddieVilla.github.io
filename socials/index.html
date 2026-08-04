@@ -164,10 +164,6 @@
 
     <ul class="channels">
       <li>
-        <span class="label">Email</span>
-        <a id="email-link" href="#">[ enable javascript to view ]</a>
-      </li>
-      <li>
         <span class="label">GitHub</span>
         <a href="https://github.com/EddieVilla" target="_blank" rel="noopener">github.com/EddieVilla</a>
       </li>
@@ -181,20 +177,5 @@
       ← <a href="../index.html">back home</a>
     </div>
   </main>
-  <script>
-    // Assemble the email address client-side so the raw string
-    // never appears in the served HTML. Defeats naive harvesters.
-    (function () {
-      var user = ['eddie20', 'villa2'].join('');
-      var domain = ['gmail', 'com'].join('.');
-      var at = String.fromCharCode(64);
-      var addr = user + at + domain;
-      var el = document.getElementById('email-link');
-      if (el) {
-        el.href = 'mailto:' + addr;
-        el.textContent = addr;
-      }
-    })();
-  </script>
 </body>
 </html>
