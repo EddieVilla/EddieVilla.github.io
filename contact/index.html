@@ -132,6 +132,77 @@
     .channels a:hover { color: var(--accent); }
     .channels a:hover::after { transform: scaleX(1); }
 
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-form .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: 'Fraunces', Georgia, serif;
+      /* 16px minimum — anything smaller makes iOS Safari zoom on focus */
+      font-size: 1rem;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 0.85rem 0.9rem;
+      -webkit-appearance: none;
+      appearance: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-form textarea {
+      min-height: 8rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 2px;
+      padding: 0 1.75rem;
+      min-height: 44px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact-form button:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
     .footer {
       margin-top: 3rem;
       font-family: 'JetBrains Mono', monospace;
@@ -151,6 +222,12 @@
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    @media (max-width: 480px) {
+      body { padding: 2.5rem 1.25rem; }
+      .lede { margin-bottom: 2.25rem; }
+      .contact-form button { align-self: stretch; }
+    }
   </style>
 </head>
 <body>
@@ -161,21 +238,18 @@
       I'm always open to chatting about full-stack and infrastructure work,
       homelab projects, or hardware tinkering. Please fill out the form below to reach me.
     </p>
-<form
-  action="https://formspree.io/f/xljrrzqp"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+    <form class="contact-form" action="https://formspree.io/f/xljrrzqp" method="POST">
+      <label>
+        <span class="label">Your email</span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label>
+        <span class="label">Your message</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <!-- your other form fields go here -->
+      <button type="submit">Send</button>
+    </form>
     <div class="footer">
       ← <a href="../index.html">back home</a>
     </div>
