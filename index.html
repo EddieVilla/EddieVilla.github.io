@@ -86,9 +86,16 @@
       color: var(--muted);
     }
 
+    .ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
     .cta {
       display: inline-block;
-      margin-top: 2.5rem;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       letter-spacing: 0.2em;
@@ -125,8 +132,10 @@
     <div class="eyebrow">Welcome from</div>
     <h1>Eddie <span class="world">Villasenor</span><span class="dot">_</span></h1>
     <div class="meta">// Software Engineer</div>
-    <a class="cta" href="contact/">contact <span class="arrow">→</span></a>
-    <a class="cta" href="socials/">socials <span class="arrow">→</span></a>
+    <nav class="ctas">
+      <a class="cta" href="contact/">contact <span class="arrow">→</span></a>
+      <a class="cta" href="socials/">socials <span class="arrow">→</span></a>
+    </nav>
   </main>
 </body>
 </html>
