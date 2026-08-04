@@ -158,21 +158,24 @@
     <div class="eyebrow">get in touch</div>
     <h1>Say <span class="accent">hello</span>.</h1>
     <p class="lede">
-      I'm always open to chatting about backend and infrastructure work,
-      homelab projects, or hardware tinkering. Email is the fastest way to reach me.
+      I'm always open to chatting about full-stack and infrastructure work,
+      homelab projects, or hardware tinkering. Please fill out the form below to reach me.
     </p>
-
-    <ul class="channels">
-      <li>
-        <span class="label">GitHub</span>
-        <a href="https://github.com/EddieVilla" target="_blank" rel="noopener">github.com/EddieVilla</a>
-      </li>
-      <li>
-        <span class="label">LinkedIn</span>
-        <a href="https://linkedin.com/in/edward-villasenor" target="_blank" rel="noopener">linkedin.com/in/edward-villasenor</a>
-      </li>
-    </ul>
-
+<form
+  action="https://formspree.io/f/xljrrzqp"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
     <div class="footer">
       ← <a href="../index.html">back home</a>
     </div>
